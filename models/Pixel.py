@@ -38,3 +38,14 @@ class Pixel():
             for traitement in numpy.unique(listTraite):
                 enth = enth + Pixel.probabiliteParPixel(traitement) * math.log(Pixel.probabiliteParPixel(traitement), 2)
             return -enth
+
+    @staticmethod
+    def getDictPixel():
+        result = {}
+        PIXEL_POSSIBLE = [i for i in range(256)]
+        for pixel in PIXEL_POSSIBLE:
+            result[pixel] = Pixel.probabiliteParPixel(str(pixel))
+        minProba = min(filter(lambda a: a != 0.0, result.values()))
+        for pixel in result:
+                result[pixel] = minProba if result[pixel] == 0 else result[pixel]
+        return result
