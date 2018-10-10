@@ -35,3 +35,11 @@ class Text():
             for lettre in compteur.keys():
                 enth = enth + Text.probabiliteParLettres(lettre) * math.log(Text.probabiliteParLettres(lettre), 2)
             return -enth
+
+    @staticmethod
+    def getDictByASCII():
+        result = {}
+        ASCII_TABLE = [chr(i) for i in range(256)]
+        for charASCII in ASCII_TABLE[32:]:
+            result[charASCII] = Text.probabiliteParLettres(charASCII)
+        return result
