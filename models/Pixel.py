@@ -38,3 +38,14 @@ class Pixel():
             for traitement in numpy.unique(listTraite):
                 enth = enth + Pixel.probabiliteParPixel(traitement) * math.log(Pixel.probabiliteParPixel(traitement), 2)
             return -enth
+
+    @staticmethod
+    def getPaquet(indice, pixelsTable):
+        paquet = []
+        i = 0
+        indiceTable = indice
+        while (i < 8):
+            paquet.append(pixelsTable[indiceTable])
+            i = i+1
+            indiceTable = indiceTable + 1
+        return paquet
