@@ -40,12 +40,12 @@ class Pixel():
             return -enth
 
     @staticmethod
-    def getPaquet(indice, pixelsTable):
-        paquet = []
-        i = 0
-        indiceTable = indice
-        while (i < 8):
-            paquet.append(pixelsTable[indiceTable])
-            i = i+1
-            indiceTable = indiceTable + 1
-        return paquet
+    def getDictPixel():
+        result = {}
+        PIXEL_POSSIBLE = [i for i in range(256)]
+        for pixel in PIXEL_POSSIBLE:
+            result[pixel] = Pixel.probabiliteParPixel(str(pixel))
+        minProba = min(filter(lambda a: a != 0.0, result.values()))
+        for pixel in result:
+                result[pixel] = minProba if result[pixel] == 0 else result[pixel]
+        return result
