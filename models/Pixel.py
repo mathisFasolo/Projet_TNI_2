@@ -3,6 +3,7 @@ import math
 
 PATH_FILE_IMG = "./data/lena_gray.raw.txt"
 
+
 class Pixel():
 
     @staticmethod

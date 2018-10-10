@@ -37,13 +37,9 @@ class Text():
             return -enth
 
     @staticmethod
-    def getDictFromText():
-        with open(PATH_FILE_TXT, "r") as text:
-            ASCII_TABLE = "".join(chr(x) for x in range(128))
-            traite = text.read()
-            compteur = Counter(traite)
-            if lettre in compteur.keys():
-                return compteur[lettre]
-            else:
-                return 0
-
+    def getDictByASCII():
+        result = {}
+        ASCII_TABLE = [chr(i) for i in range(256)]
+        for charASCII in ASCII_TABLE[32:]:
+            result[charASCII] = Text.probabiliteParLettres(charASCII)
+        return result
