@@ -49,3 +49,9 @@ class Pixel():
         for pixel in result:
                 result[pixel] = minProba if result[pixel] == 0 else result[pixel]
         return result
+
+    @staticmethod
+    def splitListValuesByPacket(dictPixel):
+        valuesDict = list(dictPixel.values())
+        for i in range(0, len(valuesDict), 8):
+            yield valuesDict[i:i+8]

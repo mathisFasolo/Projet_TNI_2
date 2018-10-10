@@ -15,4 +15,8 @@ def codage_arithmetique(dict_pixel_proba):
 
 
 if __name__ == '__main__':
-    print(Pixel.getDictPixel())
+    dictPixel = Pixel.getDictPixel()
+    packets = list(Pixel.splitListValuesByPacket(dictPixel))
+    print(len(packets))
+    for packet in packets :
+        print(packet)
