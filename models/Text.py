@@ -35,3 +35,15 @@ class Text():
             for lettre in compteur.keys():
                 enth = enth + Text.probabiliteParLettres(lettre) * math.log(Text.probabiliteParLettres(lettre), 2)
             return -enth
+
+    @staticmethod
+    def getDictFromText():
+        with open(PATH_FILE_TXT, "r") as text:
+            ASCII_TABLE = "".join(chr(x) for x in range(128))
+            traite = text.read()
+            compteur = Counter(traite)
+            if lettre in compteur.keys():
+                return compteur[lettre]
+            else:
+                return 0
+
