@@ -40,15 +40,18 @@ class Pixel():
             return -enth
 
     @staticmethod
-    ## tabProbas est un paquet, soit 8 pixels
-    def getTag(tabProbas):
+    def getDictPixel():
+        result = {}
+        PIXEL_POSSIBLE = [i for i in range(256)]
+        for pixel in PIXEL_POSSIBLE:
+            result[pixel] = Pixel.probabiliteParPixel(str(pixel))
+        minProba = min(filter(lambda a: a != 0.0, result.values()))
+        for pixel in result:
+                result[pixel] = minProba if result[pixel] == 0 else result[pixel]
+        return result
 
-        print(tabProbas)
-
-        tabProbas
-
-
-
-
-
-        return res
+    @staticmethod
+    def splitListValuesByPacket(dictPixel):
+        valuesDict = list(dictPixel.values())
+        for i in range(0, len(valuesDict), 8):
+            yield valuesDict[i:i+8]
