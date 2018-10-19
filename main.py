@@ -12,13 +12,13 @@ def codage_huffman(list_traite):
     codage_huffman(dictForHuffman)
 
 
+
+
+
 def codage_arithmetique(dict_pixel_proba, list_length):
     pass
 
 
 if __name__ == '__main__':
-    dictPixel = Pixel.getDictPixel()
-    packets = list(Pixel.splitListValuesByPacket(dictPixel))
-    print(len(packets))
-    for packet in packets:
-        print(packet)
+    print(Text.generer_dico_digramme())
+
