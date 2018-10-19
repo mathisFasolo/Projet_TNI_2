@@ -1,5 +1,6 @@
 from collections import Counter
 import math
+import unicodedata
 
 PATH_FILE_TXT = "./data/exemple1.txt"
 
@@ -43,3 +44,12 @@ class Text():
         for charASCII in ASCII_TABLE[32:]:
             result[charASCII] = Text.probabiliteParLettres(charASCII)
         return result
+
+    @staticmethod
+    def transformationText():
+        with open(PATH_FILE_TXT, 'r') as text:
+            brut = text.read()
+            traite = unicodedata.normalize('NFD', brut).encode('ascii', 'ignore')
+            with open("./data/text_ascii.txt", "w") as outfile:
+                outfile.write(str(traite))
+    
