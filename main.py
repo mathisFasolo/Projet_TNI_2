@@ -20,5 +20,5 @@ if __name__ == '__main__':
     dictPixel = Pixel.getDictPixel()
     packets = list(Pixel.splitListValuesByPacket(dictPixel))
     print(len(packets))
-    for packet in packets :
+    for packet in packets:
         print(packet)
