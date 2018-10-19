@@ -1,6 +1,7 @@
 from models.Text import Text
 from models.Pixel import Pixel
 
+
 def codage_huffman(list_traite):
     dictForHuffman = Text.getDictByASCII()
     dictValues = list(dictForHuffman.values())
@@ -10,7 +11,8 @@ def codage_huffman(list_traite):
             dictForHuffman[key] = minProba
     codage_huffman(dictForHuffman)
 
-def codage_arithmetique(dict_pixel_proba):
+
+def codage_arithmetique(dict_pixel_proba, list_length):
     pass
 
 
@@ -18,5 +20,5 @@ if __name__ == '__main__':
     dictPixel = Pixel.getDictPixel()
     packets = list(Pixel.splitListValuesByPacket(dictPixel))
     print(len(packets))
-    for packet in packets :
+    for packet in packets:
         print(packet)
