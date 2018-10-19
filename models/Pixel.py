@@ -38,3 +38,17 @@ class Pixel():
             for traitement in numpy.unique(listTraite):
                 enth = enth + Pixel.probabiliteParPixel(traitement) * math.log(Pixel.probabiliteParPixel(traitement), 2)
             return -enth
+
+    @staticmethod
+    ## tabProbas est un paquet, soit 8 pixels
+    def getTag(tabProbas):
+
+        print(tabProbas)
+
+        tabProbas
+
+
+
+
+
+        return res
