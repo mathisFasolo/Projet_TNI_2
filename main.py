@@ -17,6 +17,8 @@ def codage_arithmetique(dict_pixel_proba, list_length):
 
 
 if __name__ == '__main__':
+    print(Text.generer_dico_digramme())
+
     # dictPixel = Pixel.getDictPixel()
     # packets = list(Pixel.splitListValuesByPacket(dictPixel))
     # print(len(packets))

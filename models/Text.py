@@ -52,4 +52,28 @@ class Text():
             traite = unicodedata.normalize('NFD', brut).encode('ascii', 'ignore')
             with open("./data/text_ascii.txt", "w") as outfile:
                 outfile.write(str(traite))
-    
+
+
+    @staticmethod
+    def generer_dico_digramme():
+        with open(PATH_FILE_TXT, "r") as text:
+            texte = text.read()
+            i = 0
+            seen = []
+
+            dico = {}
+            while i < len(texte):
+                if(i)
+                tempDiagramme = texte[i]+texte[i+1]
+                print(tempDiagramme)
+                if tempDiagramme in seen:
+                    dico[tempDiagramme] = dico[tempDiagramme] + 1
+                else:
+                    dico[tempDiagramme] = 1
+                    seen.append(tempDiagramme)
+                i = i + 1
+            return dico
+
+
+
+
